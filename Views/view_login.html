@@ -3,10 +3,12 @@
 
 <head>
   <title>Logar</title>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="./styles/style_login.css">
   <script src="./scripts/jquery-3.6.0.js"></script>
   <script src="./scripts/comunicaApiLogar.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -14,27 +16,32 @@
 </head>
 
 <body>
-  <div class="container-principal">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 offset-md-3" id="index">
-          <h1>Login</h1>
 
-          <form name="formulario" autocomplete="off">
-            <div class="form-group ">
-              <label for="login">Login</label>
-              <input type="text" class="form-control" id="login" placeholder="Digite seu login" required>
-            </div>
-            <div class="form-group">
-              <label for="senha">Senha</label>
-              <input type="password" class="form-control" id="senha" placeholder="Senha" required>
-            </div>
+  <div class="Login">
+    
+    <h1 class="text-center"> Login</h1>
 
-            <button type="button" class="btn btn-primary" onclick="logar()">Enviar</button>
-          </form>
+    <form action="" class="needs-validation">
+
+      <div class="form-group was-validated">
+        <label class="form-label" for="email_input">Usuário</label>
+        <input class="form-control" type="email" name="email" id="email_input" required>
+        <div class="invalid-feedback">
+          O campo Usuário é obrigatório
         </div>
       </div>
-    </div>
+
+      <div class="form-group was-validated">
+        <label class="form-label" for="password_input">Senha</label>
+        <input class="form-control" type="password" name="password" id="password_input" required>
+        <div class="invalid-feedback">
+          O campo Senha é obrigatório
+        </div>
+      </div>
+
+      <button type="button" class="btn btn-primary w-100" onclick="logar()">Enviar</button>
+
+    </form>
   </div>
 </body>
 
