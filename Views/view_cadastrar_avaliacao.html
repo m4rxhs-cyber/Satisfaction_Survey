@@ -5,11 +5,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <script src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js'></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Css Geral -->
     <link rel="stylesheet" href="./styles/style_geral.css">
+    <link rel="stylesheet" href="./styles/style_cadastrar_avaliacao.css">
+
+    <!-- Box Icons -->
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Scripts-->
     <script src="./scripts/jquery-3.6.0.js"></script>
     <script src="./scripts/comunicaApiAluno.js"></script>
     <script src="./scripts/script.js"></script>
@@ -18,7 +29,8 @@
 </head>
 
 <body>
-    <nav class="navbar is-info">
+
+    <!-- <nav class="navbar is-info">
         <div class="navbar-item">
             <div class="field is-grouped">
                 <span id="nomeProjeto" onclick="easteregg()">Satisfaction Survey</span>
@@ -42,41 +54,61 @@
             </div>
         </div>
         </div>
+    </nav> -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    
+        <a class="navbar-brand mb-0 h1" id="nomeProjeto" onclick="easteregg()">Satisfaction Survey</a>
+       
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav navbar-end">
+                <li class="nav-item active">
+                    <a class="nav-link active button" onclick="logout()">
+                        SAIR
+                    </a>
+                </li>
+            </ul>
+        </div>
+    
     </nav>
+
+
+
+
+
 
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
                 <form name="formulario" autocomplete="off" method="post">
-                    <h1 class="title" id="titulo">
-                        Pesquisa de Satisfação
-                    </h1>
+                    <h1 class="title text-center" id="titulo">Pesquisa de Satisfação</h1>
+                   
                     <br>
-                    <label>Qual a sua nota para a aula?</label>
-                    <br>
-                    <label class="radio" style="margin-left: 20%;">1</label>
-                    <input type="radio" name="nota" id="notaInput" value="1" required>
+                   
+                    <label class="label text-center">Qual a sua nota para a aula?</label>
+                    
+                    
+                    <label class="radio text-center" style="margin-left: 20%;">1</label>
+                    <input type="radio" class="radio text-center" name="nota" id="notaInput" value="1" required>
 
-                    <label class="radio">2</label>
-                    <input type="radio" name="nota" id="notaInput" value="2" required>
+                    <label class="radio text-center">2</label>
+                    <input type="radio" class="radio text-center" name="nota" id="notaInput" value="2" required>
 
-                    <label class="radio">3</label>
-                    <input type="radio" name="nota" id="notaInput" value="3" required>
+                    <label class="radio text-center">3</label>
+                    <input type="radio" class="radio text-center"name="nota" id="notaInput" value="3" required>
 
-                    <label class="radio">4</label>
-                    <input type="radio" name="nota" id="notaInput" value="4" required>
+                    <label class="radio text-center">4</label>
+                    <input type="radio" class="radio text-center"name="nota" id="notaInput" value="4" required>
 
-                    <label class="radio">5</label>
-                    <input type="radio" name="nota" id="notaInput" value="5" required>
+                    <label class="radio text-center">5</label>
+                    <input type="radio" class="radio text-center" name="nota" id="notaInput" value="5" required>
 
                     <br><br>
-                    <label>Disciplina</label>
-                    <br>
 
                     <div class="form-group">
 
                         <p>
-                            <label>Selecione a Disciplina:</label>
+                            <label class="label text-center">Selecione a Disciplina:</label>
                             <select id="disciplinaSelect" class="form-control" onchange="listarDisciplinas()">
                                 <option value="0">Selecione a Discipina....</option>
                             </select>
@@ -84,12 +116,12 @@
 
                     </div>
 
-                    <br><br>
-                    <label>Escreva um comentário sobre a aula de hoje</label>
+                    
+                    <label class="label text-center">Escreva um comentário sobre a aula de hoje</label>
                     <textarea placeholder="Escreva um comentário ou uma dúvida" cols="50" rows="4" id="comentarioInput"
                         style="padding-left: 10px;"></textarea>
                     <br><br>
-                    <button type="button" class="btn btn-primary" id="botaoEnviar" onclick="cadastrarAvaliacao()">Enviar</button>
+                    <button type="button" class="btn btn-primary text-center" id="botaoEnviar" onclick="cadastrarAvaliacao()">Enviar</button>
                 </form>
             </div>
         </div>
