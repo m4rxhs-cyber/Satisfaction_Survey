@@ -4,7 +4,7 @@ function logar() {
     var senha = $("#password_input").val();
 
 
-    $.get('http://20.206.250.122:5187/Usuario/Listar')
+    $.get('http://localhost:5001/Usuario/Listar')
         .done(function (resposta) {
             for (i = 0; i < resposta.length; i++) {
                 if (resposta[i].email == login && resposta[i].senha == senha) {
