@@ -35,30 +35,36 @@ namespace satisfactionSurvey.Controllers
                 ).ToList();
         }
 
-        [HttpGet]
-        public List<Avaliacao> Visualizar(int id)
+        [HttpGet] 
+        public Avaliacao Visualizar(int id)
         {
-            List<Avaliacao> sql;
-
-            sql =  contexto.Avaliacaos.Where(p => p.Id == id).Select
-            (
-                p => new Avaliacao
-                {
-                    Id = p.Id,
-                    Nota= p.Nota,
-                    Comentario = p.Comentario,
-                    IdDisciplina = p.IdDisciplina,
-                    IdDisciplinaNavigation = new Disciplina 
-                        { 
-                            Id = p.IdDisciplinaNavigation.Id, 
-                            NomeDisciplina = p.IdDisciplinaNavigation.NomeDisciplina
-                        }
-                }
-            ).ToList();
-
-            return sql;
+            return contexto.Avaliacaos.FirstOrDefault(p => p.Id == id);
         }
 
+        // [HttpGet]
+        // public List<Avaliacao> Visualizar(int id)
+        // {
+        //     List<Avaliacao> sql;
+
+        //      sql =  contexto.Avaliacaos.Where(p => p.Id == id).Select
+        //     // (
+        //     //     p => new Avaliacao
+        //     //     {
+        //     //         Id = p.Id,
+        //     //         Nota= p.Nota,
+        //     //         Comentario = p.Comentario,
+        //     //         IdDisciplina = p.IdDisciplina,
+        //     //         IdDisciplinaNavigation = new Disciplina 
+        //     //             { 
+        //     //                 Id = p.IdDisciplinaNavigation.Id, 
+        //     //                 NomeDisciplina = p.IdDisciplinaNavigation.NomeDisciplina
+        //     //             }
+        //     //     }
+        //     ).ToList();
+
+        //    return sql;
+       // }
+       
         [HttpPost]
         public string Cadastrar([FromBody]Avaliacao novoAvaliacao)
         {
@@ -96,6 +102,27 @@ namespace satisfactionSurvey.Controllers
                     return "Erro ao fazer a exclusão! \n Erro: " + e.Message;   
                 }
             }       
+        }
+
+        [HttpGet]
+        public List<Avaliacao> ListarPorDisciplina(int id)
+        {
+            return contexto.Avaliacaos.Include(v => v.IdDisciplinaNavigation).Where(v => v.IdDisciplina == id).Select
+            (
+                    v => new Avaliacao 
+                    { 
+                    Id = v.Id,
+                    Nota= v.Nota,
+                    Comentario = v.Comentario,
+                    IdDisciplina = v.IdDisciplina,
+                    IdDisciplinaNavigation = new Disciplina 
+                        { 
+                             Id = v.IdDisciplinaNavigation.Id, 
+                            NomeDisciplina = v.IdDisciplinaNavigation.NomeDisciplina
+                        }, 
+                        
+                    }
+                ).ToList();
         }
         
     }

@@ -1,12 +1,13 @@
+//Funcao para logar no sistema
 function logar() {
-    var login = $("#login").val();
-    var senha = $("#senha").val();
+    var login = $("#email_input").val();
+    var senha = $("#password_input").val();
 
 
-    $.get('https://localhost:5001/Login')
+    $.get('https://localhost:5001/Usuario/Listar')
         .done(function (resposta) {
             for (i = 0; i < resposta.length; i++) {
-                if (resposta[i].login == login && resposta[i].senha == senha) {
+                if (resposta[i].email == login && resposta[i].senha == senha) {
                     if (resposta[i].grupo == 'aluno') {
                         window.location.href = "./view_cadastrar_avaliacao.html";
                     } else { window.location.href = "./view_avaliacoes.html" }
@@ -32,6 +33,7 @@ function logar() {
 }
 
 
+//Funcao para deslogar do sistema
 function logout() {
     window.location.href = "index.html";
 }

@@ -1,0 +1,10 @@
+#nomeProjeto {
+    color: whitesmoke;
+    font-size: 30px;
+    font-family: fonteNomeProjeto;
+}
+@font-face {
+    font-family: fonteNomeProjeto;
+    src: url(../enixe/Enixe.otf);
+}
+
