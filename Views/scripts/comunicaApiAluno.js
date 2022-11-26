@@ -1,5 +1,5 @@
 function listarDisciplinas(){
-    $.get('https://localhost:5001/Disciplina/Listar')
+    $.get('http://localhost:5001/Disciplina/Listar')
         .done(function(resposta) { 
             for(i = 0; i < resposta.length; i++) {
                 $('#disciplinaSelect').append($('<option></option>').val(resposta[i].id).html(resposta[i].nomeDisciplina));
@@ -20,7 +20,7 @@ function cadastrarAvaliacao() {
 
     $.ajax({
         type: 'POST',
-        url: 'https://localhost:5001/Avaliacao/Cadastrar',
+        url: 'http://localhost:5001/Avaliacao/Cadastrar',
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify(avaliacao),
         success: function () {
