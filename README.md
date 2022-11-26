@@ -28,46 +28,13 @@
 </table>
 
 >## Como a aplicação foi feita:
-### Primeiramente eu criei a parte do front-end somente com HTML, CSS e JavaScript, para depois passar tudo para o Vue JS. Como eu não tinha conhecimento sobre tal assunto, fui estudar. No teste pedia para salvar os dados em um banco de dados e criar uma api em Spring Boot para fazer a comunicação com o front-end, mas eu não tenho conhecimento sobre Java, então resolvi criar uma api em JSON e salvar os dados também en um arquivo JSON. O back-end do site está hospedado no heroku e o front-end você pode rodar ele em localhost ou então abrir o GitPage. O servidor que usei foi o Json-Server.   
+### Primeiramente foi instalado na máquina o dotnet na versão 7 e os pacotes do Entity Framework. Logo após foi feito os arquivos das visões de login, avaliações e cadastro de avaliações e seus respectivos arquivos Javascript. Na terceira fase do projeto foi criado o banco de dados com as tabelas avaliacao, usuario e disciplinas. Após a criação do banco, foi feita a engenharia reversa do banco usando o scafold, método do Entity Framework. Na penúltima fase do projeto foram feitas as APIs do sistema que estão na pasta controller. A última parte do projeto foi a tentativa de subir a aplicação e roda na Azure, porém não obtivemos sucesso.
 
->## Como rodar a aplicação:
-#### Basta acessar o seguinte link:
-```
+>## O que não foi feito dos requisitos:
 
- https://m4rxhs-cyber.github.io/Cadastro-Pacientes-Pages/ 
- 
-```
+#### Aplicação rodando na Azure e a atualização de dados. 
 
->### Mas se quiser rodar em LOCALHOST dê os sequintes comandos:
- Abra o terminal, pode ser o do VS Code, e crie uma pasta para baixar os arquivos
- ```
- mkdir nomeDaPasta
- ```
- Entre na pasta
- ```
- cd nomeDaPasta
- ```
- Clone este repositório na pasta
-```
-git clone https://github.com/m4rxhs-cyber/Cadastro-de-Pacientes.git
-```
+>## Motivo que não foi possível fazer os itens acima:
 
-## Você precisará instalar os seguintes pacotes: VUE CLI e o JSON-SERVER
-
-#### Para instalar o VUE CLI basta digitar o seguinte comando:
-```
-npm install -g @vue/cli
-```
-
-#### Para instalar o JSON-SERVER basta digitar o seguinte comando:
-```
-npm install json-server
-```
-
-#### Depois de tudo instalado, já conseguimos rodar a aplicação. Para isso, digite o comando:
-```
-npm run serve
-```
-
-### Ele te dará um link, um LOCALHOST e um NETWORK, copie o link do NETWORK e acesse em seu browser.
-### Pronto, agora você ja pode usufrir do sistema.
+1. Conseguimos subir a aplicação para Azure, porém as APIs não funcionaram. Tentamos inúmeras possibilidades de soluções diferentes e não conseguimos solucionar os problemas.
+2. A atualização de dados não foi feita pois o nosso sistema ja estava pronto e fizemos apenas algumas alterações na APi em questão. O nosso banco ja estava construido e com relações de tabelas e para fazer as atualizações teriam que mudar a lógica no nosso banco. 
