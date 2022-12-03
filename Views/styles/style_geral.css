@@ -1,17 +1,27 @@
 #nomeProjeto {
     color: whitesmoke;
     font-family: fonteNomeProjeto;
+    display: flex;
+    font-size:x-large;
 }
 @font-face {
     font-family: fonteNomeProjeto;
     src: url(../enixe/Enixe.otf);
 }
 
-body {
-    background: #233b60;
-    width: 100%;
+section {
     height: 100vh;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #233b60;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 
 

@@ -4,7 +4,7 @@ $(document).ready(function () {
 });
 
 function listarGrid(){
-    $.get('https://localhost:5001/Avaliacao/Listar')
+    $.get('https://20.206.250.122:5001/Avaliacao/Listar')
         .done(function(avaliacoes) { 
             carregarGrid(avaliacoes);
         })
@@ -42,7 +42,7 @@ function carregarGrid(avaliacoes) {
 }
 
 function filtrarDisciplinas(){
-    $.get('https://localhost:5001/Disciplina/Listar')
+    $.get('https://20.206.250.122:5001/Disciplina/Listar')
         .done(function(resposta) { 
             for(i = 0; i < resposta.length; i++) {
                 $('#filtroDisciplina').append($('<option></option>').val(resposta[i].id).html(resposta[i].nomeDisciplina));
@@ -64,7 +64,7 @@ function listarAvaliacaoPorDisciplina() {
     }
     else
     {
-        $.get('https://localhost:5001/Avaliacao/ListarPorDisciplina?id=' + valueDiscipina)
+        $.get('https://20.206.250.122:5001/Avaliacao/ListarPorDisciplina?id=' + valueDiscipina)
             .done(function(resposta) { 
                 carregarGrid(resposta);
             })
@@ -77,7 +77,7 @@ function listarAvaliacaoPorDisciplina() {
 function deleteAvaliacao(id) {
     $.ajax({
         type: 'DELETE',
-        url: 'https://localhost:5001/Avaliacao/Excluir',
+        url: 'https://20.206.250.122:5001/Avaliacao/Excluir',
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify(id),
         success: function (resposta) {
@@ -96,7 +96,7 @@ function deleteAvaliacao(id) {
 }
 
 function visualisarAvaliacao(id){
-    $.get('https://localhost:5001/Avaliacao/Visualizar?id='+id)
+    $.get('https://20.206.250.122:5001/Avaliacao/Visualizar?id='+id)
     .done(function(resposta){
         let visualizacao = "NOTA: " + resposta.nota;
         visualizacao += '\n';

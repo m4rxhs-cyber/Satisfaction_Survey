@@ -28,104 +28,90 @@
     <title>Satisfation Survey</title>
 </head>
 
-<body>
+<nav class="navbar is-info">
+    <div class="navbar-item">
+        <div class="field is-grouped">
+            <span id="nomeProjeto" onclick="easteregg()">Satisfaction Survey</span>
+        </div>
+    </div>
 
-    <!-- <nav class="navbar is-info">
+    <div class="navbar-end">
         <div class="navbar-item">
             <div class="field is-grouped">
-                <span id="nomeProjeto" onclick="easteregg()">Satisfaction Survey</span>
-            </div>
-        </div>
-
-        <div class="navbar-end">
-            <div class="navbar-item">
-                <div class="field is-grouped">
-                    <p class="control">
-                        <a class="button is-primary" onclick="logout()">
-                            <span>
-                                Sair
-                            </span>
-                            <span class="icon">
-                                <i class="fas fa-solid fa-arrow-right"></i>
-                            </span>
-                        </a>
-                    </p>
-                </div>
-            </div>
-        </div>
-        </div>
-    </nav> -->
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-    
-        <a class="navbar-brand mb-0 h1" id="nomeProjeto" onclick="easteregg()">Satisfaction Survey</a>
-       
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav navbar-end">
-                <li class="nav-item active">
-                    <a class="nav-link active button" onclick="logout()">
-                        SAIR
+                <p class="control">
+                    <a class="button is-primary" onclick="logout()">
+                        <span>
+                            Sair
+                        </span>
+                        <span class="icon">
+                            <i class="fas fa-solid fa-arrow-right"></i>
+                        </span>
                     </a>
-                </li>
-            </ul>
-        </div>
-    
-    </nav>
-
-
-
-
-
-
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
-                <form name="formulario" autocomplete="off" method="post">
-                    <h1 class="title text-center" id="titulo">Pesquisa de Satisfação</h1>
-                   
-                    <br>
-                   
-                    <label class="label text-center">Qual a sua nota para a aula?</label>
-                    
-                    
-                    <label class="radio text-center" style="margin-left: 20%;">1</label>
-                    <input type="radio" class="radio text-center" name="nota" id="notaInput" value="1" required>
-
-                    <label class="radio text-center">2</label>
-                    <input type="radio" class="radio text-center" name="nota" id="notaInput" value="2" required>
-
-                    <label class="radio text-center">3</label>
-                    <input type="radio" class="radio text-center"name="nota" id="notaInput" value="3" required>
-
-                    <label class="radio text-center">4</label>
-                    <input type="radio" class="radio text-center"name="nota" id="notaInput" value="4" required>
-
-                    <label class="radio text-center">5</label>
-                    <input type="radio" class="radio text-center" name="nota" id="notaInput" value="5" required>
-
-                    <br><br>
-
-                    <div class="form-group">
-
-                        <p>
-                            <label class="label text-center">Selecione a Disciplina:</label>
-                            <select id="disciplinaSelect" class="form-control" onchange="listarDisciplinas()">
-                                <option value="0">Selecione a Discipina....</option>
-                            </select>
-                        </p>
-
-                    </div>
-
-                    
-                    <label class="label text-center">Escreva um comentário sobre a aula de hoje</label>
-                    <textarea placeholder="Escreva um comentário ou uma dúvida" cols="50" rows="4" id="comentarioInput"
-                        style="padding-left: 10px;"></textarea>
-                    <br><br>
-                    <button type="button" class="btn btn-primary text-center" id="botaoEnviar" onclick="cadastrarAvaliacao()">Enviar</button>
-                </form>
+                </p>
             </div>
         </div>
     </div>
+    </div>
+</nav>
+
+<body id="corpo">
+    
+
+    <section>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form name="formulario" autocomplete="off" method="post" style="max-width: 100%;">
+                        <h1 class="title text-center" id="titulo">Pesquisa de Satisfação</h1>
+
+                        <br>
+
+                        <label class="label text-center">Qual a sua nota para a aula?</label>
+
+
+                        <label class="radio text-center" style="margin-left: 25%;">1</label>
+                        <input type="radio" class="radio text-center" name="nota" id="notaInput" value="1" required>
+
+                        <label class="radio text-center">2</label>
+                        <input type="radio" class="radio text-center" name="nota" id="notaInput" value="2" required>
+
+                        <label class="radio text-center">3</label>
+                        <input type="radio" class="radio text-center" name="nota" id="notaInput" value="3" required>
+
+                        <label class="radio text-center">4</label>
+                        <input type="radio" class="radio text-center" name="nota" id="notaInput" value="4" required>
+
+                        <label class="radio text-center">5</label>
+                        <input type="radio" class="radio text-center" name="nota" id="notaInput" value="5" required>
+
+                        <br><br>
+
+                        <div class="form-group">
+
+                            <p>
+                                <label class="label text-center">Selecione a Disciplina:</label>
+                                <select id="disciplinaSelect" class="form-control" onchange="listarDisciplinas()">
+                                    <option value="0">Selecione a Discipina....</option>
+                                </select>
+                            </p>
+
+                        </div>
+
+
+                        <label class="label text-center">Escreva um comentário sobre a aula de hoje</label>
+                        <textarea class="textarea text-center" placeholder="Escreva um comentário ou uma dúvida"
+                            cols="50" rows="4" id="comentarioInput" style="padding-left: 10px;"></textarea>
+                        <br><br>
+
+                        <center>
+                            <button type="button" class="btn btn-primary" id="botaoEnviar"
+                                onclick="cadastrarAvaliacao()">Enviar</button>
+                        </center>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 
 </html>

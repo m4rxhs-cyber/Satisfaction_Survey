@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +10,12 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js'></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+
     <link rel="stylesheet" href="./styles/style_geral.css">
     <script src="./scripts/jquery-3.6.0.js"></script>
     <script src="./scripts/comunicaApiProfessor.js"></script>
@@ -17,8 +24,8 @@
     <title>Satisfation Survey</title>
 </head>
 
-<body id="body">
-    <!-- <nav class="navbar is-info">
+<body id="corpo">
+    <nav class="navbar is-info">
         <div class="navbar-item">
             <div class="field is-grouped">
                 <span id="nomeProjeto" onclick="easteregg()">Satisfaction Survey</span>
@@ -42,45 +49,54 @@
             </div>
         </div>
         </div>
-    </nav> -->
+    </nav>
 
-    <div class="modal-dialog modal-lg" style="max-width: 90%;">
-        <div class="modal-content">
-            <div class="modal-body">
-                <form name="formulario" class="form" autocomplete="off">
-                    <h3 class="text-center">
-                        Avaliações
-                    </h3>
+    <section class="page-section" id="contact">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="modal-dialog modal-lg" style="max-width: 100%;">
+                    <div class="modal-content">
+                        <div class="modal-body">
 
-                    <div class="form-group">
+                            <form name="formulario" class="form" autocomplete="off">
+                                <h3>
+                                    <center> Avaliações</center>
+                                </h3>
 
-                        <p>
-                            <label>Filtrar por Disciplina:</label>
-                            <select id="filtroDisciplina" class="form-control" onchange="listarAvaliacaoPorDisciplina()">
-                                <option value="0">Selecione uma Disciplina....</option>
-                            </select>
-                        </p>
-                        
+                                <div class="form-group">
+
+                                    <p>
+                                        <label>Filtrar por Disciplina:</label>
+                                        <select id="filtroDisciplina" class="form-control"
+                                            onchange="listarAvaliacaoPorDisciplina()">
+                                            <option value="0">Selecione uma Disciplina....</option>
+                                        </select>
+                                    </p>
+
+                                </div>
+
+                                <form name="formulario" autocomplete="off">
+
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr class="text-center">
+                                                <th>Discipina</th>
+                                                <th>Notas</th>
+                                                <th>Comentário</th>
+                                                <th>Visualisar</th>
+                                                <th>Excluir</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="grid">
+
+                                        </tbody>
+                                    </table>
+                                </form>
+                        </div>
                     </div>
-
-                    <table class="table table-striped">
-                        <thead>
-                            <tr class="text-center">
-                                <th>Discipina</th>
-                                <th>Notas</th>
-                                <th>Comentário</th>
-                                <th>Visualisar</th>
-                                <th>Excluir</th>
-                            </tr>
-                        </thead>
-                        <tbody id="grid">
-
-                        </tbody>
-                    </table>
-                </form>
+                </div>
             </div>
-        </div>
-    </div>
+    </section>
 </body>
 
 </html>
