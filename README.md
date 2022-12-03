@@ -36,5 +36,4 @@
 
 >## Motivo que não foi possível fazer os itens acima:
 
-1. Conseguimos subir a aplicação para Azure, porém as APIs não funcionaram. Tentamos inúmeras possibilidades de soluções diferentes e não conseguimos solucionar os problemas.
-2. A atualização de dados não foi feita pois o nosso sistema ja estava pronto e fizemos apenas algumas alterações na APi em questão. O nosso banco ja estava construido e com relações de tabelas e para fazer as atualizações teriam que mudar a lógica no nosso banco. 
+1. A atualização de dados não foi feita pois o nosso sistema ja estava pronto e fizemos apenas algumas alterações na APi em questão. O nosso banco ja estava construido e com relações de tabelas e para fazer as atualizações teriam que mudar a lógica no nosso banco. 
