@@ -41,30 +41,6 @@ namespace satisfactionSurvey.Controllers
             return contexto.Avaliacaos.FirstOrDefault(p => p.Id == id);
         }
 
-        // [HttpGet]
-        // public List<Avaliacao> Visualizar(int id)
-        // {
-        //     List<Avaliacao> sql;
-
-        //      sql =  contexto.Avaliacaos.Where(p => p.Id == id).Select
-        //     // (
-        //     //     p => new Avaliacao
-        //     //     {
-        //     //         Id = p.Id,
-        //     //         Nota= p.Nota,
-        //     //         Comentario = p.Comentario,
-        //     //         IdDisciplina = p.IdDisciplina,
-        //     //         IdDisciplinaNavigation = new Disciplina 
-        //     //             { 
-        //     //                 Id = p.IdDisciplinaNavigation.Id, 
-        //     //                 NomeDisciplina = p.IdDisciplinaNavigation.NomeDisciplina
-        //     //             }
-        //     //     }
-        //     ).ToList();
-
-        //    return sql;
-       // }
-       
         [HttpPost]
         public string Cadastrar([FromBody]Avaliacao novoAvaliacao)
         {

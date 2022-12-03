@@ -25,7 +25,7 @@ function cadastrarAvaliacao() {
         data: JSON.stringify(avaliacao),
         success: function () {
             Swal.fire({
-                position: 'top',
+                position: 'center',
                 icon: 'success',
                 title: 'Avaliação enviada com sucesso',
                 showConfirmButton: false,
