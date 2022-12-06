@@ -1,5 +1,5 @@
 function logout() {
-    window.location.href = "view_login.html";
+    window.location.href = "http://satisfactionsurvey.brazilsouth.cloudapp.azure.com/index.html";
 }
 
 function easteregg() {

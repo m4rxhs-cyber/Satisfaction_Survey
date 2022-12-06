@@ -117,7 +117,6 @@ function deleteAvaliacao(id) {
 function visualisarAvaliacao(id) {
     $.get('https://20.206.250.122:5001/Avaliacao/Visualizar?id=' + id)
         .done(function (resposta) {
-            //console.log(resposta);
             let visualizacao = "NOTA: " + resposta.nota;
             visualizacao += '\n';
             visualizacao += "COMENTÁRIO: " + resposta.comentario;
