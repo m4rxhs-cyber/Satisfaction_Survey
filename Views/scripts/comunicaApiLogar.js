@@ -35,5 +35,5 @@ function logar() {
 
 //Funcao para deslogar do sistema
 function logout() {
-    window.location.href = "index.html";
+    window.location.href = "http://satisfactionsurvey.brazilsouth.cloudapp.azure.com/index.html";
 }
