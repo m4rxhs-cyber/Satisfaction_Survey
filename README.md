@@ -32,8 +32,4 @@
 
 >## O que não foi feito dos requisitos:
 
-#### Aplicação rodando na Azure e a atualização de dados. 
-
->## Motivo que não foi possível fazer os itens acima:
-
 1. A atualização de dados não foi feita pois o nosso sistema ja estava pronto e fizemos apenas algumas alterações na APi em questão. O nosso banco ja estava construido e com relações de tabelas e para fazer as atualizações teriam que mudar a lógica no nosso banco. 

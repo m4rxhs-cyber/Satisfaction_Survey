@@ -68,7 +68,12 @@ function listarAvaliacaoPorDisciplina() {
                 carregarGrid(resposta);
             })
             .fail(function (erro, mensagem, excecao) {
-                alert("Erro ao consultar a API!");
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Erro ao consultar a API!',
+                    footer: '<a href="mailto:m4rxhs3301@gmail.com" target="_blank">Contate o administrador aqui</a>'
+                })
             });
     }
 }
@@ -91,16 +96,18 @@ function deleteAvaliacao(id) {
                 url: 'https://20.206.250.122:5001/Avaliacao/Excluir',
                 contentType: "application/json; charset=utf-8",
                 data: JSON.stringify(id),
-                sucess: function () {
-                    // Swal.fire(
-                    //     'Deletado!',
-                    //     'Avaliação deletada.',
-                    //     'success',
-                    // )
-                    location.reload();
-                },
-                error: function() {
-                    alert("erro ao deletar");
+                complete: (retorno) => {
+                    console.log(retorno);
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Avaliação deletada com sucesso!',
+                        showConfirmButton: false,
+                        timer: 3500
+                    }),
+                    setTimeout(function () {
+                        window.location.reload();
+                    }, 3800);
                 }
             })
         }
@@ -110,11 +117,11 @@ function deleteAvaliacao(id) {
 function visualisarAvaliacao(id) {
     $.get('https://20.206.250.122:5001/Avaliacao/Visualizar?id=' + id)
         .done(function (resposta) {
-            console.log(resposta);
+            //console.log(resposta);
             let visualizacao = "NOTA: " + resposta.nota;
             visualizacao += '\n';
             visualizacao += "COMENTÁRIO: " + resposta.comentario;
-            
+
 
             Swal.fire({
                 position: 'center',

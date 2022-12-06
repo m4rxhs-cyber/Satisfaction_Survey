@@ -31,9 +31,9 @@ function cadastrarAvaliacao() {
                 showConfirmButton: false,
                 timer: 3500
             }),
-                setTimeout(function () {
-                    window.location.reload();
-                }, 3800);
+            setTimeout(function () {
+                window.location.reload();
+            }, 3800);
         },
         error: function () {
             Swal.fire({
