@@ -39,7 +39,7 @@ function cadastrarAvaliacao() {
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
-                text: 'Erro ao enviar a avalização!',
+                text: 'Erro ao enviar a avaliação!',
                 footer: '<a href="mailto:m4rxhs3301@gmail.com" target="_blank">Contate o administrador aqui</a>'
             })
         }
